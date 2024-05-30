@@ -49,8 +49,9 @@ def google_search(query):
     return g.text.split("(")[0]
 @app.route('/<path:subpath>')
 def tasktest(subpath):
- 
+  try:
       return google_search(subpath)
-
+  except:
+      return ""
 if __name__ == "__main__":
     app.run()
